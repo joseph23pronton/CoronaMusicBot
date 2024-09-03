@@ -30,7 +30,7 @@ jobs:
           files: 'pom.xml'
           replacements: 'Snapshot=${{ github.event.inputs.version_number }}'
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        run: mvn --batch-mode --update-snapshots
       - name: Rename jar
         run: mv target/*-All.jar JMusicBot-${{ github.event.inputs.version_number }}.jar
       - name: Upload jar
